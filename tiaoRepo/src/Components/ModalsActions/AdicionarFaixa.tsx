@@ -9,7 +9,7 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { TextField } from "@mui/material";
 import { api } from "../../Api/api";
-import { ModalAddFaixa } from "../../interfaces/Body";
+import { ModalAddFaixaProps } from "../../interfaces/Body";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -24,7 +24,7 @@ export function ModalAdicionarFaixa({
   openModal,
   close,
   idAlbum,
-}: ModalAddFaixa) {
+}: ModalAddFaixaProps) {
   const [number, setNumber] = useState("");
   const [title, setTitle] = useState("");
   const [duration, setDuration] = useState("");

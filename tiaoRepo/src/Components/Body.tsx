@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../Api/api";
-import { Album, IModalDelete, IModalProps, Track } from "../interfaces/Body";
+import { Album, IModalDelete, IModalProps } from "../interfaces/Body";
 import { ModalRemoveFaixa } from "./ModalsActions/RemoveFaixa";
 import { Plus } from "lucide-react";
 import { ModalAdicionarFaixa } from "./ModalsActions/AdicionarFaixa";
@@ -105,7 +105,7 @@ export function Body() {
                   <h3
                     className="text-gray-600 font-bold cursor-pointer hover:bg-[#ffffff81]"
                     onClick={() => handleDeleteAlbum(item)}
-                  >{`Album: ${item.name}, ${item.year}`}</h3>
+                  >{`Álbum: ${item.name}, ${item.year}`}</h3>
                   <div className="flex justify-between items-center w-full ">
                     <div className="flex justify-between items-center w-full ">
                       <div className="flex justify-center items-center gap-5 ">
@@ -117,7 +117,7 @@ export function Body() {
                       <span className="text-gray-600">Duração</span>
                     </div>
                   </div>
-                  {item.tracks.map((track: Track) => (
+                  {item.tracks.map((track: IModalProps) => (
                     <>
                       <div
                         className="flex justify-between items-center w-full hover:bg-[#ffffff81]"

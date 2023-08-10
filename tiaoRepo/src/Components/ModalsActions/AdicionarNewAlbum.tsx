@@ -9,7 +9,7 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { TextField } from "@mui/material";
 import { api } from "../../Api/api";
-import { ModalNewAlbum } from "../../interfaces/Body";
+import { ModalProps } from "../../interfaces/Body";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -20,7 +20,7 @@ const Transition = forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export function ModalAdicionarNewAlbum({ openModal, close }: ModalNewAlbum) {
+export function ModalAdicionarNewAlbum({ openModal, close }: ModalProps) {
   const [name, setName] = useState("");
   const [year, setYear] = useState("");
 

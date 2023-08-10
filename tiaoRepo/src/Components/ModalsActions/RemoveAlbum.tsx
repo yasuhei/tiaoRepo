@@ -28,7 +28,9 @@ export function ModalRemoveAlbum({ openModal, close, row }: ModalRemoveProps) {
     api
       .delete(`album/${row?.id}`)
       .then(() => {
-        alert("Albúm deletado");
+        alert("Álbum deletado");
+        window.location.reload();
+        close();
       })
       .catch((error) => console.error(error));
   };

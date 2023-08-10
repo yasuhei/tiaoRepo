@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import { IModalProps, modalRemoveFaixa } from "../../interfaces/Body";
+import { ModalRemoveFaixas } from "../../interfaces/Body";
 import { api } from "../../Api/api";
 
 const Transition = forwardRef(function Transition(
@@ -19,8 +19,9 @@ const Transition = forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export function ModalRemoveFaixa({ openModal, close, row }: modalRemoveFaixa) {
+export function ModalRemoveFaixa({ openModal, close, row }: ModalRemoveFaixas) {
   const [responseDataError, setResponseDataError] = useState<string>("");
+  console.log(responseDataError);
 
   const handleClose = () => {
     close();

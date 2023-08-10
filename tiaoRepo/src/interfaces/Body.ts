@@ -1,22 +1,15 @@
-export interface Track {
+export interface IModalProps {
+  id: number;
   number: number;
   title: string;
   duration: number;
-  id: number;
 }
 
 export interface Album {
   id: number;
   name: string;
   year: number;
-  tracks: Track[];
-}
-
-export interface IModalProps {
-  id: number;
-  number: number;
-  title: string;
-  duration: number;
+  tracks: IModalProps[];
 }
 
 export interface IModalDelete {
@@ -25,25 +18,19 @@ export interface IModalDelete {
   year: number;
 }
 
-export interface ModalRemoveProps {
+export interface ModalProps {
   openModal: boolean;
   close: () => void;
+}
+
+export interface ModalRemoveProps extends ModalProps {
   row: IModalDelete | null;
 }
 
-export interface ModalAddFaixa {
-  openModal: boolean;
-  close: () => void;
+export interface ModalAddFaixaProps extends ModalProps {
   idAlbum: number;
 }
 
-export interface ModalNewAlbum {
-  openModal: boolean;
-  close: () => void;
-}
-
-export interface modalRemoveFaixa {
-  openModal: boolean;
-  close: () => void;
+export interface ModalRemoveFaixas extends ModalProps {
   row: IModalProps | null;
 }
